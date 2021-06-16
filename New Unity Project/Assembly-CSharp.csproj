@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Main Menu\BackgroundMusic.cs" />
+     <Compile Include="Assets\Main Menu\SoundManager.cs" />
      <Compile Include="Assets\Main Menu\creditsback.cs" />
      <Compile Include="Assets\Main Menu\info.cs" />
  <Reference Include="UnityEngine">
