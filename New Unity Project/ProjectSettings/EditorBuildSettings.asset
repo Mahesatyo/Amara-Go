@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Creditsscene.unity
     guid: 01a419d20fd991d4684b3ae4af099280
+  - enabled: 1
+    path: Assets/Scenes/Stagee.unity
+    guid: a44b5528ca489ba4ea1317b4de4721e9
   m_configObjects: {}

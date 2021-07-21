@@ -40,7 +40,10 @@
      <Compile Include="Assets\Main Menu\SoundManager.cs" />
      <Compile Include="Assets\Main Menu\creditsback.cs" />
      <Compile Include="Assets\Main Menu\info.cs" />
-     <Compile Include="Assets\stage\PlayerControls.cs" />
+     <Compile Include="Assets\Main Menu\startmenu.cs" />
+     <Compile Include="Assets\stage\CameraController.cs" />
+     <Compile Include="Assets\stage\KarakterController.cs" />
+     <Compile Include="Assets\stage\LandGenerator.cs" />
      <Compile Include="Assets\stage\ScoreManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

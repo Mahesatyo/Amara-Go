@@ -549,7 +549,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 210506214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258177664}
+        m_MethodName: play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stagee
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &210506214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +612,7 @@ GameObject:
   - component: {fileID: 258177660}
   - component: {fileID: 258177663}
   - component: {fileID: 258177659}
+  - component: {fileID: 258177664}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -706,6 +718,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fddc6f2fc178b244921909723ced8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &258177664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258177658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea6cd6a7d6a68d4c9db8b7b99f2030e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &315215755
@@ -895,10 +919,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d87bebdf7f47bc449ce06118ebecf26, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a1df7bd1c20a0ee47a501d17669f163f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.62
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1947,8 +1971,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 2.3}
-  m_SizeDelta: {x: 520.45306, y: 923.58496}
+  m_AnchoredPosition: {x: -1.2095, y: 1.1062}
+  m_SizeDelta: {x: 522.0341, y: 925.97266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111052112
 MonoBehaviour:
