@@ -43,7 +43,9 @@
      <Compile Include="Assets\Main Menu\startmenu.cs" />
      <Compile Include="Assets\stage\CameraController.cs" />
      <Compile Include="Assets\stage\KarakterController.cs" />
+     <Compile Include="Assets\stage\LandDestroyer.cs" />
      <Compile Include="Assets\stage\LandGenerator.cs" />
+     <Compile Include="Assets\stage\ObjectPooler.cs" />
      <Compile Include="Assets\stage\ScoreManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

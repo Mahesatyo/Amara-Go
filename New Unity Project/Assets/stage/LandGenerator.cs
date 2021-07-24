@@ -9,9 +9,36 @@ public class LandGenerator : MonoBehaviour
     public float distanceBetween;
 
     private float landWidth;
+
+    public float distanceBetweenMin;
+    public float distanceBetweenMax;
+
+    //public GameObject[] theLands;
+
+    private int landSelector;
+
+    private float[] landWidths;
+    public ObjectPooler[] theObjectPools;
+
+    private float minHeight;
+    public Transform maxHeightPoint;
+    private float maxHeight;
+    public float maxHeightChange;
+    private float heightChange;
+
     void Start()
     {
-        landWidth = theLand.GetComponent<BoxCollider2D>().size.x;
+        //landWidth = theLand.GetComponent<BoxCollider2D>().size.x;
+
+        landWidths = new float[theObjectPools.Length];
+
+        for(int i = 0; i < theObjectPools.Length; i++)
+        {
+            landWidths[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
+        }
+
+        minHeight = transform.position.y;
+        maxHeight = maxHeightPoint.position.y;
     }
 
     // Update is called once per frame
@@ -19,9 +46,32 @@ public class LandGenerator : MonoBehaviour
     {
         if(transform.position.x < generationPoint.position.x)
         {
-            transform.position = new Vector3(transform.position.x + landWidth + distanceBetween, transform.position.y, transform.position.z);
+            distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
 
-            Instantiate(theLand, transform.position, transform.rotation);
+            landSelector = Random.Range(0, theObjectPools.Length);
+
+            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
+
+            if(heightChange > maxHeight)
+            {
+                heightChange = maxHeight;
+            } else if(heightChange < minHeight)
+            {
+                heightChange = minHeight;
+            }
+
+            transform.position = new Vector3(transform.position.x + (landWidths[landSelector] / 2) + distanceBetween, heightChange, transform.position.z);
+
+            //Instantiate(/*theLand*/theLands[landSelector], transform.position, transform.rotation);
+
+
+            GameObject newLand = theObjectPools[landSelector].GetPooledObject();
+
+            newLand.transform.position = transform.position;
+            newLand.transform.rotation = transform.rotation;
+            newLand.SetActive(true);
+
+            transform.position = new Vector3(transform.position.x + (landWidths[landSelector] / 2), transform.position.y, transform.position.z);
         }
     }
 }
