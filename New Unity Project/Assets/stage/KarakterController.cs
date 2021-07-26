@@ -16,6 +16,8 @@ public class KarakterController : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
 
+    private bool stoppedJumping;
+
     private Rigidbody2D myRigidbody;
 
     public bool grounded;
@@ -46,6 +48,8 @@ public class KarakterController : MonoBehaviour
           speedMilestoneCountStore = speedMilestoneCount;
 
           speedIncreaseMilestoneStore = speedIncreaseMilestone;
+
+          stoppedJumping = true;
     }
 
     // Update is called once per frame
@@ -66,15 +70,16 @@ public class KarakterController : MonoBehaviour
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
-        if(Input.GetMouseButtonDown(0) )
+        if(Input.GetMouseButtonDown(0))
         {
             if(grounded)
             {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+            stoppedJumping = false;
             }
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if((Input.GetMouseButtonDown(0)) && !stoppedJumping)
         {
             if(jumpTimeCounter > 0)
             {
@@ -86,6 +91,7 @@ public class KarakterController : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             jumpTimeCounter = 0;
+            stoppedJumping = true;
         }
 
         if(grounded)

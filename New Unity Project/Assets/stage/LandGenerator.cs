@@ -26,6 +26,9 @@ public class LandGenerator : MonoBehaviour
     public float maxHeightChange;
     private float heightChange;
 
+    private InfectGenerator theInfectGenerator;
+    public float randomCoinThreshold;
+
     void Start()
     {
         //landWidth = theLand.GetComponent<BoxCollider2D>().size.x;
@@ -39,6 +42,8 @@ public class LandGenerator : MonoBehaviour
 
         minHeight = transform.position.y;
         maxHeight = maxHeightPoint.position.y;
+
+        theInfectGenerator = FindObjectOfType<InfectGenerator>();
     }
 
     // Update is called once per frame
@@ -71,6 +76,10 @@ public class LandGenerator : MonoBehaviour
             newLand.transform.rotation = transform.rotation;
             newLand.SetActive(true);
 
+            if(Random.Range(0f, 100f) < randomCoinThreshold)
+            {
+            theInfectGenerator.SpawnInfects(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+            }
             transform.position = new Vector3(transform.position.x + (landWidths[landSelector] / 2), transform.position.y, transform.position.z);
         }
     }

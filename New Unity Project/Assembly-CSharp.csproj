@@ -37,17 +37,21 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Main Menu\BackgroundMusic.cs" />
+     <Compile Include="Assets\Main Menu\MainMenu.cs" />
      <Compile Include="Assets\Main Menu\SoundManager.cs" />
      <Compile Include="Assets\Main Menu\creditsback.cs" />
      <Compile Include="Assets\Main Menu\info.cs" />
      <Compile Include="Assets\Main Menu\startmenu.cs" />
      <Compile Include="Assets\stage\CameraController.cs" />
+     <Compile Include="Assets\stage\DeathMenu.cs" />
      <Compile Include="Assets\stage\GameManager.cs" />
+     <Compile Include="Assets\stage\InfectGenerator.cs" />
      <Compile Include="Assets\stage\KarakterController.cs" />
      <Compile Include="Assets\stage\LandDestroyer.cs" />
      <Compile Include="Assets\stage\LandGenerator.cs" />
      <Compile Include="Assets\stage\ObjectPooler.cs" />
      <Compile Include="Assets\stage\ScoreManager.cs" />
+     <Compile Include="Assets\stage\pickupPoints.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
